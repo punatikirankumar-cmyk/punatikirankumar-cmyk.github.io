@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KP Kiran Kumar Punati | Senior Infrastructure Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                        cardBorder: '#1f293d',
+                        neonCyan: '#06b6d4',
+                        neonBlue: '#3b82f6',
+                        neonEmerald: '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f3f4f6;
+        }
+        .font-mono-code {
+            font-family: 'Fira Code', monospace;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.3);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-black">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        KP
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">Kiran Kumar Punati</span>
+                        <span class="block text-xs text-cyan-400 font-mono-code">Sr. Infra Engineer</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#about" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">About</a>
+                    <a href="#terminal" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Terminal</a>
+                    <a href="#skills" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Skills</a>
+                    <a href="#experience" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Experience</a>
+                    <a href="#highlights" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Highlights</a>
+                    <a href="#certifications" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Certifications</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#contact" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-cyan-500 to-blue-600 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white text-black shadow-lg shadow-cyan-500/25 transition-all">
+                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-slate-900 rounded-[10px] text-white group-hover:bg-opacity-0 font-semibold">
+                            Get in Touch
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 focus:outline-none transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-4 pb-6 space-y-2">
+            <a href="#about" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">About</a>
+            <a href="#terminal" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Terminal</a>
+            <a href="#skills" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Skills</a>
+            <a href="#experience" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Experience</a>
+            <a href="#highlights" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Highlights</a>
+            <a href="#certifications" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Certifications</a>
+            <a href="#contact" class="block px-3 py-2.5 rounded-lg text-base font-medium text-cyan-400 hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background Ambient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-cyan-400 text-xs font-mono-code shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Available for Enterprise Infrastructure Projects
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Building <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">reliable enterprise infrastructure.</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Hi, I'm <strong class="text-white font-semibold">KP Kiran Kumar Punati</strong>, a Senior Infrastructure Engineer with 6+ years of specialized experience in mission-critical production systems, virtualization, high availability, cloud migration, and automated operations.
+                    </p>
+
+                    <!-- Meta Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-sm text-slate-300 font-medium">
+                        <div class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg glass-card border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-rose-400"></i>
+                            <span>India</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg glass-card border border-slate-800">
+                            <i class="fa-solid fa-server text-cyan-400"></i>
+                            <span>Production Infrastructure</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg glass-card border border-slate-800">
+                            <i class="fa-solid fa-cloud text-blue-400"></i>
+                            <span>Hybrid Cloud & VMware</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold shadow-lg shadow-cyan-500/25 hover:scale-[1.02] transition-transform flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Download Resume
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="px-6 py-3.5 rounded-xl glass-card border border-slate-700 text-slate-200 font-semibold hover:bg-slate-800 hover:text-white transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin text-cyan-400"></i>
+                            LinkedIn Profile
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl glass-card border border-slate-700 text-slate-200 font-semibold hover:bg-slate-800 hover:text-white transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-emerald-400"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Card / Avatar -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glowing backdrop shape -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
+                        
+                        <!-- Profile Card -->
+                        <div class="relative glass-card p-6 sm:p-8 rounded-3xl border border-slate-700/80 shadow-2xl space-y-6">
+                            <div class="flex items-center gap-4">
+                                <!-- Avatar Placeholder -->
+                                <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-cyan-600 to-blue-700 p-1 shadow-xl flex-shrink-0">
+                                    <div class="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="KP Kiran Kumar Punati" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/200x200/111827/06b6d4?text=KP'">
+                                    </div>
+                                    <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">KP Kiran Kumar Punati</h3>
+                                    <p class="text-cyan-400 font-medium text-sm">Senior Infrastructure Engineer</p>
+                                    <div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+                                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                                        <span>Enterprise Security & Hardening</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-4 space-y-3">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Core Expertise:</span>
+                                    <span class="text-slate-200 font-medium">Linux, AIX, Solaris, VMware</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Automation:</span>
+                                    <span class="text-slate-200 font-medium">Ansible, Python, Bash</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Disaster Recovery:</span>
+                                    <span class="text-slate-200 font-medium">SRM, Zerto, Commvault</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                                        <i class="fa-solid fa-server text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs text-slate-400 uppercase tracking-wider">Scale</h4>
+                                        <p class="text-sm font-bold text-white">1,000+ VMs Managed</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono-code">99.99% Uptime</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="py-12 border-y border-slate-800/80 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2 p-4 rounded-2xl glass-card border border-slate-800/60">
+                    <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">6+</div>
+                    <div class="text-slate-400 text-sm font-medium">Years Enterprise Experience</div>
+                </div>
+                <div class="space-y-2 p-4 rounded-2xl glass-card border border-slate-800/60">
+                    <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">1,000+</div>
+                    <div class="text-slate-400 text-sm font-medium">Virtual Servers Supported</div>
+                </div>
+                <div class="space-y-2 p-4 rounded-2xl glass-card border border-slate-800/60">
+                    <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">24/7</div>
+                    <div class="text-slate-400 text-sm font-medium">Production Reliability</div>
+                </div>
+                <div class="space-y-2 p-4 rounded-2xl glass-card border border-slate-800/60">
+                    <div class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">100%</div>
+                    <div class="text-slate-400 text-sm font-medium">Automation Focus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="py-20 md:py-28 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-mono-code font-bold">Interactive Terminal</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">System Profile Execution</h3>
+                <p class="text-slate-400 text-base">Inspect live environment parameters, execution roles, and tech stack configurations.</p>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="rounded-2xl glass-card border border-slate-700 shadow-2xl overflow-hidden font-mono-code">
+                <!-- Terminal Top Bar -->
+                <div class="bg-slate-900 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-rose-500 inline-block"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500 inline-block"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></div>
+                        <span class="text-xs text-slate-400 font-mono ml-2 font-semibold">infra-profile.sh — bash</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-xs text-slate-400">
+                        <span class="hidden sm:inline">bash — 80x24</span>
+                        <button onclick="resetTerminal()" class="hover:text-cyan-400 transition-colors" title="Reset Terminal">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Terminal Body -->
+                <div id="terminal-body" class="p-6 sm:p-8 bg-slate-950/90 text-sm sm:text-base space-y-6 text-slate-300 min-h-[380px] max-h-[500px] overflow-y-auto">
+                    <div>
+                        <p class="text-slate-500"># Welcome to KP Kiran Kumar Punati's interactive terminal environment.</p>
+                        <p class="text-slate-500"># Type or click commands below to run diagnostics.</p>
+                    </div>
+
+                    <!-- Command 1: whoami -->
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                            <span>$</span>
+                            <span>whoami</span>
+                        </div>
+                        <div class="pl-4 text-slate-100 font-semibold">
+                            kiran.punati
+                        </div>
+                    </div>
+
+                    <!-- Command 2: role -->
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                            <span>$</span>
+                            <span>role</span>
+                        </div>
+                        <div class="pl-4 text-slate-100">
+                            Senior Infrastructure Engineer (Enterprise Operations, Hybrid Cloud & Virtualization)
+                        </div>
+                    </div>
+
+                    <!-- Command 3: stack -->
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                            <span>$</span>
+                            <span>stack</span>
+                        </div>
+                        <div class="pl-4 text-slate-200">
+                            RHEL 7/8/10 · IBM AIX 7.2 · Oracle Solaris · VMware vSphere/vCenter/ESXi · Cisco UCSM · CloudStack
+                        </div>
+                    </div>
+
+                    <!-- Command 4: automation -->
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                            <span>$</span>
+                            <span>automation</span>
+                        </div>
+                        <div class="pl-4 text-slate-200">
+                            Python · Bash Scripting · Ansible Playbooks · REST APIs · VMware PowerCLI
+                        </div>
+                    </div>
+
+                    <!-- Command 5: focus -->
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                            <span>$</span>
+                            <span>focus</span>
+                        </div>
+                        <div class="pl-4 text-emerald-400 font-medium">
+                            reliability · security hardening · high availability clustering · disaster recovery · backup optimization
+                        </div>
+                    </div>
+
+                    <!-- Active prompt line -->
+                    <div class="flex items-center gap-2 pt-2 text-cyan-400 font-bold">
+                        <span>$</span>
+                        <span class="inline-block w-2.5 h-5 bg-cyan-400 animate-pulse"></span>
+                    </div>
+                </div>
+
+                <!-- Interactive Command Suggestions -->
+                <div class="bg-slate-900 px-6 py-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs font-mono-code">
+                    <span class="text-slate-400">Quick Commands:</span>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="runTerminalCommand('whoami')" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors">whoami</button>
+                        <button onclick="runTerminalCommand('role')" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors">role</button>
+                        <button onclick="runTerminalCommand('stack')" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors">stack</button>
+                        <button onclick="runTerminalCommand('automation')" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors">automation</button>
+                        <button onclick="runTerminalCommand('focus')" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors">focus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Core Competencies Section -->
+    <section id="skills" class="py-20 md:py-28 bg-slate-950/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-mono-code font-bold">Technical Competencies</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">Core Infrastructure Expertise</h3>
+                <p class="text-slate-400 text-base">Comprehensive breakdown of operating systems, virtualization platforms, storage systems, and automation tools.</p>
+            </div>
+
+            <!-- Skills Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Operating Systems & Virtualization -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-700/80 shadow-xl glow-effect transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black text-2xl font-bold shadow-lg shadow-cyan-500/20">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">OS & Virtualization</h4>
+                                <p class="text-cyan-400 text-sm font-mono-code">Enterprise Server Environments</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Extensive administration and lifecycle management of mission-critical enterprise operating systems and high-density virtualization fabrics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">RHEL 7/8/10</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">IBM AIX 7.2</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">Oracle Solaris 10/11</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">VMware vSphere / vCenter / ESXi</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">Oracle LDOMs</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">Cisco UCSM</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-cyan-300">Hyper-V</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                        <span>High Availability & Performance</span>
+                        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Enterprise Verified</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Storage & Backup Systems -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-700/80 shadow-xl glow-effect transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-blue-500/20">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Storage & Backup</h4>
+                                <p class="text-blue-400 text-sm font-mono-code">Data Protection & Resilience</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Design and maintenance of enterprise SAN/NAS fabrics, LUN provisioning, Fibre Channel zoning, and comprehensive disaster recovery backups.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">Enterprise SAN / NAS</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">Fibre Channel Zoning</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">LUN Provisioning</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">Commvault</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">Veeam Backup & Replication</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-blue-300">OpenText Data Protector</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                        <span>Zero Data Loss Strategy</span>
+                        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Enterprise Verified</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Automation & Scripting -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-700/80 shadow-xl glow-effect transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center text-black text-2xl font-bold shadow-lg shadow-emerald-500/20">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Automation & Scripting</h4>
+                                <p class="text-emerald-400 text-sm font-mono-code">DevOps & Infrastructure-as-Code</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Eliminating operational toil through robust scripting frameworks, automated playbook deployments, and REST API integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-emerald-300">Python</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-emerald-300">Bash / Shell Scripting</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-emerald-300">Ansible Playbooks</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-emerald-300">REST API Integration</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-emerald-300">VMware PowerCLI</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                        <span>Efficiency & Streamlining</span>
+                        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Enterprise Verified</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: High Availability & DR -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-700/80 shadow-xl glow-effect transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center text-black text-2xl font-bold shadow-lg shadow-amber-500/20">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">High Availability & DR</h4>
+                                <p class="text-amber-400 text-sm font-mono-code">Resilience & Directory Integration</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Architecting fault-tolerant infrastructure, disaster recovery failover workflows, directory integration, and strict security hardening.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-amber-300">Pacemaker Clustering</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-amber-300">VMware SRM</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-amber-300">Zerto Virtual Manager (ZVM)</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-amber-300">SSSD Directory Integration</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-amber-300">Security Hardening</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                        <span>Business Continuity</span>
+                        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Enterprise Verified</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Highlights Section -->
+    <section id="experience" class="py-20 md:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-mono-code font-bold">Professional Journey</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">Experience & Key Highlights</h3>
+                <p class="text-slate-400 text-base">Track record of leading infrastructure stability, cloud migrations, and process automations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Experience Timeline -->
+                <div class="space-y-8">
+                    <h4 class="text-xl font-bold flex items-center gap-3 text-white border-b border-slate-800 pb-3">
+                        <i class="fa-solid fa-briefcase text-cyan-400"></i>
+                        <span>Career Timeline</span>
+                    </h4>
+
+                    <div class="space-y-6">
+                        <!-- Role 1 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 relative pl-8 before:absolute before:left-3 before:top-6 before:bottom-0 before:w-0.5 before:bg-cyan-500/30">
+                            <div class="absolute -left-1.5 top-6 w-3 h-3 rounded-full bg-cyan-400 shadow-lg shadow-cyan-500"></div>
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <h5 class="text-lg font-bold text-white">Senior Infrastructure Engineer</h5>
+                                <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono-code">Present</span>
+                            </div>
+                            <p class="text-sm text-cyan-300 font-medium mb-3">Enterprise Production Operations</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Spearheading the architecture, maintenance, and automation of hybrid cloud and on-premise infrastructure supporting over 1,000+ virtual servers. Ensuring 99.99% uptime, seamless DR failovers, and robust security policies.
+                            </p>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 relative pl-8">
+                            <div class="absolute -left-1.5 top-6 w-3 h-3 rounded-full bg-blue-500 shadow-lg shadow-blue-500"></div>
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <h5 class="text-lg font-bold text-white">Infrastructure & Systems Engineer</h5>
+                                <span class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono-code">Previous</span>
+                            </div>
+                            <p class="text-sm text-blue-300 font-medium mb-3">Virtualization & Storage Operations</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Managed RHEL, AIX, and Solaris operating environments. Configured enterprise SAN/NAS storage arrays, Fibre Channel zoning, and streamlined patch management through Ansible and Python automation scripts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Highlights & Accomplishments -->
+                <div id="highlights" class="space-y-8">
+                    <h4 class="text-xl font-bold flex items-center gap-3 text-white border-b border-slate-800 pb-3">
+                        <i class="fa-solid fa-award text-emerald-400"></i>
+                        <span>Key Accomplishments</span>
+                    </h4>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-base">Automation & Toil Reduction</h5>
+                                <p class="text-slate-300 text-sm mt-1">Developed comprehensive Ansible playbooks and Python scripts that reduced routine server provisioning time by over 70%.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-base">Zero-Downtime DR Drills</h5>
+                                <p class="text-slate-300 text-sm mt-1">Orchestrated regular VMware SRM and Zerto failover drills, consistently meeting strict RPO/RTO metrics without customer disruption.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-base">Scale & Performance Tuning</h5>
+                                <p class="text-slate-300 text-sm mt-1">Successfully supported and optimized 1,000+ virtual servers across multi-vendor hypervisors and Unix/Linux platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 md:py-28 bg-slate-950/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-mono-code font-bold">Credentials</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">Certifications & Training</h3>
+                <p class="text-slate-400 text-base">Verified industry credentials in cloud infrastructure, virtualization, and enterprise operating systems.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Cert 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-700/80 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl font-bold mb-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">VMware Certified Professional (VCP)</h4>
+                        <p class="text-slate-400 text-sm">Data Center Virtualization & vSphere Administration</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono-code">
+                        <span>Status: Active</span>
+                        <span class="text-cyan-400"><i class="fa-solid fa-badge-check"></i> Verified</span>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-700/80 hover:border-blue-500/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl font-bold mb-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Red Hat Certified Engineer (RHCE)</h4>
+                        <p class="text-slate-400 text-sm">Advanced Linux System Administration & Automation</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono-code">
+                        <span>Status: Active</span>
+                        <span class="text-blue-400"><i class="fa-solid fa-badge-check"></i> Verified</span>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Enterprise Storage & Backup Specialist</h4>
+                        <p class="text-slate-400 text-sm">Commvault, Veeam & SAN Fabric Architecture</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono-code">
+                        <span>Status: Active</span>
+                        <span class="text-emerald-400"><i class="fa-solid fa-badge-check"></i> Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-28 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-mono-code font-bold">Get In Touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">Let's Connect</h3>
+                <p class="text-slate-400 text-base">Reach out for infrastructure consultations, senior engineering roles, or collaboration opportunities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-6 rounded-2xl border border-slate-700/80 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-slate-400 font-mono-code uppercase">Email Me At</h4>
+                            <a href="mailto:contact@kirankumar.infra" class="text-white font-semibold hover:text-cyan-400 transition-colors">kiran.punati@enterprise.infra</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-700/80 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl flex-shrink-0">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-slate-400 font-mono-code uppercase">LinkedIn Network</h4>
+                            <a href="https://linkedin.com" target="_blank" class="text-white font-semibold hover:text-cyan-400 transition-colors">linkedin.com/in/kiran-kumar-punati</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-700/80 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs text-slate-400 font-mono-code uppercase">Location</h4>
+                            <p class="text-white font-semibold">India (Available for Remote & Hybrid Roles)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleContactSubmit(event)" class="glass-card p-8 rounded-3xl border border-slate-700/80 space-y-6 shadow-2xl">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono-code text-slate-300">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono-code text-slate-300">Your Email</label>
+                                <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-mono-code text-slate-300">Subject</label>
+                            <input type="text" required placeholder="Infrastructure Consultation / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-mono-code text-slate-300">Message</label>
+                            <textarea rows="4" required placeholder="Hi Kiran, I'd like to discuss an enterprise infrastructure project..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyan-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold shadow-lg shadow-cyan-500/25 hover:scale-[1.01] transition-transform flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 bg-slate-950 text-center text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-bold text-sm">
+                    KP
+                </div>
+                <span class="font-bold text-white">KP Kiran Kumar Punati</span>
+            </div>
+            <p>© 2026 KP Kiran Kumar Punati. Senior Infrastructure Engineer. All rights reserved.</p>
+            <p class="text-xs font-mono-code text-slate-500">Built with modern dark mode UI, glassmorphic styling, and interactive terminal.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal Box (Custom alternative to alert) -->
+    <div id="message-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+        <div class="glass-card p-8 rounded-3xl border border-slate-700 max-w-md w-full text-center space-y-4 shadow-2xl animate-in fade-in zoom-in duration-200">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Message Sent Successfully!</h3>
+            <p class="text-slate-300 text-sm">Thank you for reaching out. Kiran will get back to you soon regarding your inquiry.</p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Terminal Logic
+        const terminalData = {
+            'whoami': 'kiran.punati',
+            'role': 'Senior Infrastructure Engineer (Enterprise Operations, Hybrid Cloud & Virtualization)',
+            'stack': 'RHEL 7/8/10 · IBM AIX 7.2 · Oracle Solaris · VMware vSphere/vCenter/ESXi · Cisco UCSM · CloudStack',
+            'automation': 'Python · Bash Scripting · Ansible Playbooks · REST APIs · VMware PowerCLI',
+            'focus': 'reliability · security hardening · high availability clustering · disaster recovery · backup optimization'
+        };
+
+        function runTerminalCommand(cmd) {
+            const body = document.getElementById('terminal-body');
+            
+            // Append command
+            const cmdDiv = document.createElement('div');
+            cmdDiv.className = 'space-y-1 mt-3';
+            cmdDiv.innerHTML = `<div class="flex items-center gap-2 text-cyan-400 font-bold"><span>$</span><span>${cmd}</span></div>`;
+            
+            // Append result
+            const resDiv = document.createElement('div');
+            resDiv.className = 'pl-4 text-slate-100 font-semibold';
+            resDiv.textContent = terminalData[cmd] || 'Command executed successfully.';
+            
+            cmdDiv.appendChild(resDiv);
+            body.appendChild(cmdDiv);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function resetTerminal() {
+            const body = document.getElementById('terminal-body');
+            body.innerHTML = `
+                <div>
+                    <p class="text-slate-500"># Welcome to KP Kiran Kumar Punati's interactive terminal environment.</p>
+                    <p class="text-slate-500"># Type or click commands below to run diagnostics.</p>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2 text-cyan-400 font-bold"><span>$</span><span>whoami</span></div>
+                    <div class="pl-4 text-slate-100 font-semibold">kiran.punati</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2 text-cyan-400 font-bold"><span>$</span><span>role</span></div>
+                    <div class="pl-4 text-slate-100">Senior Infrastructure Engineer (Enterprise Operations, Hybrid Cloud & Virtualization)</div>
+                </div>
+                <div class="flex items-center gap-2 pt-2 text-cyan-400 font-bold">
+                    <span>$</span>
+                    <span class="inline-block w-2.5 h-5 bg-cyan-400 animate-pulse"></span>
+                </div>
+            `;
+        }
+
+        // Contact Form Submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const modal = document.getElementById('message-modal');
+            modal.classList.remove('hidden');
+            e.target.reset();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('message-modal');
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
